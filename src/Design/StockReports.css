@@ -1,0 +1,1767 @@
+/* ======================================================================== 
+   STOCKFLOW PRO ULTRA - Enterprise Grade Design System v3.0
+   Prefix: stockflow_
+   ======================================================================== */
+
+/* ---------------------------------------------
+   GLOBAL RESET & BASE TYPOGRAPHY
+--------------------------------------------- */
+.stockflow_app-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stockflow_app-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------------------
+   APP LAYOUT - ELEGANT STRUCTURE
+--------------------------------------------- */
+.stockflow_app-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #ffffff 0%, #ffffff 100%);
+  position: relative;
+}
+
+.stockflow_app-main {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------------------------------------------
+   SIDEBAR - PREMIUM DEEP NAVY GRADIENT
+--------------------------------------------- */
+.stockflow_sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #0a1c3a 0%, #13294b 100%);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 20;
+}
+
+.stockflow_sidebar-header {
+  padding: 32px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 8px;
+}
+
+.stockflow_logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stockflow_logo-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #0a1c3a;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.stockflow_logo-text h1 {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(120deg, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.stockflow_logo-text p {
+  font-size: 11px;
+  color: rgba(230, 9, 9, 0.55);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.stockflow_sidebar-nav {
+  flex: 1;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stockflow_nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border: none;
+  background: transparent;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.stockflow_nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.stockflow_nav-item.stockflow_active {
+  background: linear-gradient(95deg, #ffffff, #f0f4ff);
+  color: #0a1c3a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+.stockflow_nav-icon {
+  font-size: 1.35rem;
+  width: 28px;
+}
+
+.stockflow_sidebar-footer {
+  padding: 24px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stockflow_update-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stockflow_status-dot {
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+  animation: stockflow_pulseGlow 2s infinite;
+}
+
+@keyframes stockflow_pulseGlow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2); }
+}
+
+.stockflow_status-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stockflow_update-time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+}
+
+.stockflow_health-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.stockflow_score-value {
+  font-weight: 800;
+  font-size: 22px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stockflow_stats-summary {
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.stockflow_summary-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.stockflow_summary-item strong {
+  color: #facc15;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------
+   MAIN CONTENT - CRISP & AIRY
+--------------------------------------------- */
+.stockflow_main-content {
+  flex: 1;
+  padding: 18px 22px;
+  overflow-y: auto;
+  background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.5) 0%, #ffffff 90%);
+}
+
+.stockflow_content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 2px solid rgba(100, 116, 139, 0.12);
+  padding-bottom: 20px;
+}
+
+.stockflow_page-title {
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(125deg, #b1051c, #830000, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.stockflow_page-subtitle {
+  font-size: 14px;
+  color: #003f97;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.stockflow_header-right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.stockflow_search-box {
+  position: relative;
+}
+
+.stockflow_search-input {
+  padding: 12px 18px 12px 44px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 48px;
+  font-size: 14px;
+  width: 280px;
+  background: #ffffff;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  font-weight: 500;
+}
+
+.stockflow_search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+  width: 320px;
+}
+
+.stockflow_search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.stockflow_refresh-btn {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 48px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  color: #475569;
+}
+
+.stockflow_refresh-btn:hover {
+  border-color: #3b82f6;
+  transform: rotate(180deg) scale(1.02);
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+/* ---------------------------------------------
+   SECTION TITLES - ELEGANT ACCENTS
+--------------------------------------------- */
+.stockflow_section-title {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(125deg, #1e293b, #334155);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+  display: inline-block;
+  border-left: 4px solid #3b82f6;
+  padding-left: 16px;
+}
+
+/* ---------------------------------------------
+   PROGRESS CARDS - LUXURIOUS SURFACES
+--------------------------------------------- */
+.stockflow_progress-section {
+  margin-bottom: 40px;
+}
+
+.stockflow_progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.stockflow_progress-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(2px);
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stockflow_progress-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e180;
+}
+
+.stockflow_progress-label {
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 14px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stockflow_progress-bar-container {
+  height: 38px;
+  background: #eef2ff;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.stockflow_progress-bar-fill {
+  height: 100%;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: width 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  position: relative;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.stockflow_progress-value {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding-right: 16px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------------------------------
+   RANGE SLIDER - PREMIUM INTERACTION
+--------------------------------------------- */
+.stockflow_range-slider-container {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.stockflow_range-slider {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  background: linear-gradient(90deg, #cbd5e1, #94a3b8);
+  border-radius: 10px;
+  outline: none;
+}
+
+.stockflow_range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(145deg, #3b82f6, #1e40af);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+  border: 2px solid #ffffff;
+}
+
+.stockflow_range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.stockflow_range-current {
+  font-weight: 800;
+  color: #2563eb;
+  background: #e0f2fe;
+  padding: 4px 12px;
+  border-radius: 40px;
+}
+
+.stockflow_range-info {
+  margin-top: 20px;
+  background: linear-gradient(115deg, #eef2ff, #ffffff);
+  border-radius: 20px;
+  padding: 14px 18px;
+  font-weight: 500;
+  font-size: 13px;
+  color: #334155;
+  border-left: 4px solid #3b82f6;
+}
+
+/* ---------------------------------------------
+   MINI BAR CHART - ELEGANT DATA BARS
+--------------------------------------------- */
+.stockflow_mini-bar-container {
+  padding: 8px 0;
+}
+
+.stockflow_mini-bar-item {
+  margin-bottom: 20px;
+}
+
+.stockflow_mini-bar-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 13px;
+}
+
+.stockflow_mini-bar-wrapper {
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.stockflow_mini-bar-fill {
+  height: 34px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.stockflow_mini-bar-value {
+  font-weight: 700;
+  padding-right: 12px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+/* ---------------------------------------------
+   CALENDAR WIDGET - REFINED
+--------------------------------------------- */
+.stockflow_calendar-widget {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.stockflow_calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.stockflow_calendar-nav {
+  background: #f1f5f9;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  color: #475569;
+}
+
+.stockflow_calendar-nav:hover {
+  background: #3b82f6;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.stockflow_calendar-month {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.stockflow_calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.stockflow_calendar-weekday {
+  font-weight: 700;
+  font-size: 12px;
+  color: #64748b;
+  padding: 8px;
+}
+
+.stockflow_calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.stockflow_calendar-day {
+  text-align: center;
+  padding: 10px 6px;
+  font-size: 13px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #334155;
+  font-weight: 500;
+}
+
+.stockflow_calendar-day:hover:not(.stockflow_invalid) {
+  background: #eef2ff;
+  color: #1e4d8f;
+}
+
+.stockflow_calendar-day.stockflow_invalid {
+  color: #cbd5e1;
+  cursor: default;
+}
+
+.stockflow_calendar-day.stockflow_today {
+  background: #3b82f6;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.stockflow_calendar-note {
+  margin-top: 20px;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* ---------------------------------------------
+   STATUS CARDS - METRIC HIGHLIGHTS
+--------------------------------------------- */
+.stockflow_status-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.stockflow_status-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #eef2ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.stockflow_status-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.stockflow_status-card-icon {
+  font-size: 2.5rem;
+}
+
+.stockflow_status-card-content h4 {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.stockflow_status-card-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.stockflow_status-card-badge {
+  display: inline-block;
+  border-radius: 40px;
+  font-weight: 700;
+  padding: 5px 12px;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.stockflow_status-card-badge.stockflow_success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.stockflow_status-card-badge.stockflow_critical {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.stockflow_status-card-badge.stockflow_info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.stockflow_status-card-badge.stockflow_warning {
+  background: #fed7aa;
+  color: #9a3412;
+}
+
+/* ---------------------------------------------
+   CHARTS SECTION - GLASS MORPHISM
+--------------------------------------------- */
+.stockflow_charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 28px;
+  margin-bottom: 44px;
+}
+
+.stockflow_chart-container-wrapper {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(2px);
+  border-radius: 28px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 25px -10px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.stockflow_chart-container-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.12);
+}
+
+.stockflow_chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stockflow_chart-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.stockflow_chart-subtitle {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.stockflow_full-width {
+  grid-column: 1 / -1;
+}
+
+/* ---------------------------------------------
+   FILTERS PANEL - COLUMN WISE LAYOUT
+--------------------------------------------- */
+.stockflow_filters-panel {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 28px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  border: 1px solid #eef2ff;
+}
+
+.stockflow_filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stockflow_filters-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.stockflow_reset-filters-btn {
+  padding: 8px 18px;
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stockflow_reset-filters-btn:hover {
+  background: #e2e8f0;
+}
+
+.stockflow_filters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 20px;
+}
+
+.stockflow_filter-group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stockflow_filter-group-item label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stockflow_filter-group-item select,
+.stockflow_filter-group-item input {
+  padding: 10px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 13px;
+  background: #ffffff;
+  transition: all 0.2s;
+  font-weight: 500;
+  width: 100%;
+}
+
+.stockflow_filter-group-item select:focus,
+.stockflow_filter-group-item input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive filter grid */
+@media (max-width: 1200px) {
+  .stockflow_filters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .stockflow_filters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stockflow_filters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------
+   INVENTORY SECTION - TABLE MANAGEMENT
+--------------------------------------------- */
+.stockflow_table-wrapper-custom {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  border: 1px solid #eef2ff;
+  margin-bottom: 24px;
+}
+
+.stockflow_inventory-table-custom {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  table-layout: auto;
+  min-width: 100%;
+}
+
+.stockflow_inventory-table-custom th {
+  background: #003c79;
+  color: #ffffff;
+  padding: 18px 14px;
+  font-weight: 700;
+  font-size: 13px;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.stockflow_inventory-table-custom td {
+  padding: 14px 12px;
+  border: 1px solid #f1f5f9;
+  color: #000000;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.stockflow_inventory-table-custom td.stockflow_fabric-cell,
+.stockflow_inventory-table-custom td.stockflow_remarks-cell {
+  white-space: normal;
+  word-break: break-word;
+  max-width: 200px;
+  min-width: 120px;
+}
+
+.stockflow_inventory-table-custom td.stockflow_barcode-cell {
+  white-space: normal;
+  word-break: break-all;
+  max-width: 180px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.stockflow_inventory-table-custom td.stockflow_timestamp-cell {
+  white-space: nowrap;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.stockflow_batch-status {
+  border-radius: 40px;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 11px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.stockflow_batch-status.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.stockflow_batch-status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.stockflow_batch-status.in-progress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.stockflow_stock-status {
+  border-radius: 40px;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 11px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.stockflow_stock-status.in_stock {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.stockflow_stock-status.issued {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.stockflow_stock-status.partially_issued {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.stockflow_inventory-table-custom tr:hover {
+  background: #fafbff;
+}
+
+.stockflow_critical-value {
+  color: #dc2626;
+  font-weight: 800;
+  background: #fef2f2;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 2px 8px;
+}
+
+.stockflow_no-data-cell {
+  text-align: center;
+  padding: 60px !important;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ---------------------------------------------
+   INVENTORY CONTROLS - QUICK FILTERS
+--------------------------------------------- */
+.stockflow_inventory-controls {
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.stockflow_filter-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stockflow_filter-btn {
+  padding: 8px 22px;
+  border-radius: 40px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 13px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stockflow_filter-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.stockflow_filter-btn.stockflow_active {
+  background: linear-gradient(115deg, #1e293b, #0f172a);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+.stockflow_results-info {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.stockflow_filtered-badge {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 12px;
+  border-radius: 40px;
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------
+   EXPORT BUTTONS - PROFESSIONAL ACTIONS
+--------------------------------------------- */
+.stockflow_export-buttons-container {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.stockflow_export-btn {
+  padding: 10px 26px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stockflow_excel-btn {
+  background: linear-gradient(115deg, #059669, #047857);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+.stockflow_excel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.35);
+}
+
+.stockflow_pdf-btn {
+  background: linear-gradient(115deg, #dc2626, #b91c1c);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.stockflow_pdf-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.35);
+}
+
+.stockflow_filter-toggle-btn {
+  background: linear-gradient(115deg, #1e293b, #0f172a);
+  color: #ffffff;
+}
+
+.stockflow_filter-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+}
+
+/* ---------------------------------------------
+   COLUMN CONTROLS - FLEXIBLE TOGGLES
+--------------------------------------------- */
+.stockflow_column-controls {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  border: 1px solid #eef2ff;
+}
+
+.stockflow_column-controls-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.stockflow_column-controls-header span {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.stockflow_column-control-btn {
+  padding: 6px 16px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.stockflow_column-control-btn:hover {
+  background: #e2e8f0;
+}
+
+.stockflow_column-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 8px 4px;
+}
+
+.stockflow_column-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stockflow_column-toggle:hover {
+  background: #eef2ff;
+}
+
+.stockflow_column-toggle input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------------------------------------------
+   STATS GRID - METRIC CARDS
+--------------------------------------------- */
+.stockflow_stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.stockflow_stat-card {
+  background: linear-gradient(115deg, #ffffff, #fafcff);
+  border-radius: 28px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.stockflow_stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+}
+
+.stockflow_stat-icon-wrapper {
+  background: #eef2ff;
+  border-radius: 24px;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stockflow_stat-icon {
+  font-size: 26px;
+  color: #3b82f6;
+}
+
+.stockflow_stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.stockflow_stat-label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* ---------------------------------------------
+   PAGINATION - CLEAN & FUNCTIONAL
+--------------------------------------------- */
+.stockflow_pagination-container {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #ffffff;
+  padding: 16px 24px;
+  border-radius: 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  border: 1px solid #eef2ff;
+}
+
+.stockflow_pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.stockflow_items-per-page {
+  padding: 8px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 40px;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.stockflow_total-items {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.stockflow_pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stockflow_pagination-btn {
+  padding: 8px 18px;
+  border-radius: 40px;
+  background: #f1f5f9;
+  border: none;
+  font-weight: 600;
+  font-size: 13px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stockflow_pagination-btn:hover:not(:disabled) {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.stockflow_pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stockflow_pagination-numbers {
+  display: flex;
+  gap: 6px;
+}
+
+.stockflow_pagination-number {
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.stockflow_pagination-number.stockflow_active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.stockflow_pagination-number:hover:not(.stockflow_active):not(.stockflow_dots) {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.stockflow_pagination-number.stockflow_dots {
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+/* ---------------------------------------------
+   SUPPLIER CARDS - ELEGANT METRICS
+--------------------------------------------- */
+.stockflow_suppliers-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  margin-top: 24px;
+}
+
+.stockflow_supplier-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 22px;
+  transition: all 0.3s ease;
+  border: 1px solid #eef2ff;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.stockflow_supplier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.stockflow_supplier-avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, #3b82f6, #6366f1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.stockflow_supplier-info {
+  flex: 1;
+}
+
+.stockflow_supplier-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.stockflow_supplier-stats {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.stockflow_supplier-progress {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.stockflow_supplier-progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  transition: width 0.5s ease;
+}
+
+.stockflow_supplier-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------
+   CATEGORY PERFORMANCE TABLE
+--------------------------------------------- */
+.stockflow_analytics-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.stockflow_analytics-table th {
+  background: #f8fafc;
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 700;
+  color: #1e293b;
+  border-bottom: 2px solid #e9edf2;
+}
+
+.stockflow_analytics-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.stockflow_fabric-name-cell {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.stockflow_available-cell {
+  font-weight: 600;
+  color: #059669;
+}
+
+.stockflow_progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stockflow_progress-bar-custom {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stockflow_progress-fill-custom {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.stockflow_progress-percent {
+  min-width: 45px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.stockflow_table-responsive {
+  overflow-x: auto;
+  border-radius: 20px;
+}
+
+/* ---------------------------------------------
+   INFO CARD - EDUCATIONAL PANEL
+--------------------------------------------- */
+.stockflow_info-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  padding: 28px;
+  margin-top: 36px;
+  border: 1px solid #eef2ff;
+  transition: all 0.3s ease;
+}
+
+.stockflow_info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+}
+
+.stockflow_info-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.stockflow_info-text {
+  color: #475569;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.stockflow_column-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stockflow_column-tag {
+  background: linear-gradient(115deg, #eef2ff, #e0e7ff);
+  color: #1e40af;
+  padding: 6px 18px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------
+   SPLASH SCREEN - PREMIUM LOADING
+--------------------------------------------- */
+.stockflow_splash-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a1c3a 0%, #13294b 100%);
+}
+
+.stockflow_splash-content {
+  text-align: center;
+  color: #ffffff;
+}
+
+.stockflow_splash-logo {
+  font-size: 64px;
+  margin-bottom: 28px;
+  animation: stockflow_floatBounce 1.5s ease infinite;
+}
+
+@keyframes stockflow_floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.stockflow_splash-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  animation: stockflow_spin 0.8s linear infinite;
+}
+
+@keyframes stockflow_spin {
+  to { transform: rotate(360deg); }
+}
+
+.stockflow_splash-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.stockflow_splash-subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------
+   CUSTOM TOOLTIP - ELEVATED
+--------------------------------------------- */
+.stockflow_custom-tooltip {
+  background: #0f172a;
+  padding: 12px 18px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stockflow_tooltip-label {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.stockflow_tooltip-value {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* ---------------------------------------------
+   GAUGE CHART LABEL
+--------------------------------------------- */
+.stockflow_gauge-label {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* ---------------------------------------------
+   RESPONSIVE DESIGN - ADAPTIVE LAYOUT
+--------------------------------------------- */
+@media (max-width: 1024px) {
+  .stockflow_sidebar {
+    width: 240px;
+  }
+  
+  .stockflow_main-content {
+    padding: 24px;
+  }
+  
+  .stockflow_charts-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .stockflow_inventory-table-custom th,
+  .stockflow_inventory-table-custom td {
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stockflow_app-main {
+    flex-direction: column;
+  }
+  
+  .stockflow_sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 0;
+  }
+  
+  .stockflow_sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .stockflow_nav-item {
+    width: auto;
+  }
+  
+  .stockflow_main-content {
+    padding: 20px;
+  }
+  
+  .stockflow_page-title {
+    font-size: 26px;
+  }
+  
+  .stockflow_stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stockflow_status-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stockflow_progress-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stockflow_content-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .stockflow_header-right {
+    width: 100%;
+  }
+  
+  .stockflow_search-input {
+    width: 100%;
+  }
+  
+  .stockflow_search-input:focus {
+    width: 100%;
+  }
+  
+  .stockflow_pagination-container {
+    flex-direction: column;
+    border-radius: 24px;
+  }
+  
+  .stockflow_export-buttons-container {
+    justify-content: center;
+  }
+  
+  .stockflow_filter-group {
+    justify-content: center;
+  }
+  
+  .stockflow_inventory-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .stockflow_column-toggles {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stockflow_chart-container-wrapper {
+    padding: 16px;
+  }
+  
+  .stockflow_stats-grid {
+    gap: 16px;
+  }
+  
+  .stockflow_stat-card {
+    padding: 16px;
+  }
+  
+  .stockflow_stat-value {
+    font-size: 24px;
+  }
+  
+  .stockflow_status-card {
+    padding: 16px;
+  }
+  
+  .stockflow_status-card-value {
+    font-size: 24px;
+  }
+  
+  .stockflow_pagination-controls {
+    justify-content: center;
+  }
+  
+  .stockflow_pagination-numbers {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* ---------------------------------------------
+   UTILITIES - HELPER CLASSES
+--------------------------------------------- */
+.stockflow_text-center {
+  text-align: center;
+}
+
+.stockflow_mt-4 {
+  margin-top: 16px;
+}
+
+.stockflow_mb-4 {
+  margin-bottom: 16px;
+}
+
+.stockflow_glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+/* Scrollbar Styling for stockflow wrapper */
+.stockflow_app-wrapper ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.stockflow_app-wrapper ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.stockflow_app-wrapper ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.stockflow_app-wrapper ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
